@@ -50,6 +50,7 @@ $(document).ready(function() {
     })
     $('.items__item').on('click', function () {
         $('.title-h1').text($(this).data('find'))
+        $('.admin-content').html("")
         switch ($(this).data('find')) {
             case 'Настройки':
                 $.ajax({
@@ -57,7 +58,6 @@ $(document).ready(function() {
                     type: 'GET',
                     dataType: 'json',
                     success: function (response) {
-                        console.log(response.length);
                         let settingsForm = `<form class='settings'>`;
                         settingsForm += `<input id='setting-title' value='${response.title}'>`;
                         settingsForm += `<input id='setting-email' value='${response.email}'>`;
@@ -67,8 +67,27 @@ $(document).ready(function() {
                     }
                 })
                 break
-            case 'Настройки2':
-
+            case 'Галлерея':
+                $.ajax({
+                    url:'/admin/getGallery.php',
+                    type:'GET',
+                    dataType:'json',
+                    success: function(responce)
+                    {
+                        let galleryBlock = `<div class="gallery">`
+                        for(let i = 0; i < responce.length; i++)
+                        {
+                            galleryBlock+=`<div class='gallery__item'>`
+                            galleryBlock+=`<img src='${responce[i].img}' alt='${responce[i].name}'>`
+                            galleryBlock+=`<div class='item__options'>`
+                            galleryBlock+=`<h2>${responce[i].name}</h2>`
+                            galleryBlock+=`</div>`
+                            galleryBlock+=`</div>`
+                        }   
+                        galleryBlock +=`</div>`
+                        $('.admin-content').append(galleryBlock);
+                    }
+                })
                 break
             default:
                 alert($(this).text() + " еще в разработке")
