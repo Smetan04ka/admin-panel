@@ -207,6 +207,45 @@ footer{
     background: rgb(5, 181, 5);
     box-shadow: 0px 0px 5px rgb(5, 181, 5);
 }
+.primary{
+    border: unset;
+    box-shadow: unset;
+    background: rgb(44, 182, 194);
+    color: white;
+    max-width: 220px;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease 0.4s;
+    border-radius: 5px;
+}
+
+.primary:hover{
+    transition: ease 0.4s;
+    background: rgb(5, 181, 5);
+    box-shadow: 0px 0px 5px rgb(5, 181, 5);
+}
+.delete{
+    border: unset;
+    box-shadow: unset;
+    background: rgb(138, 26, 14);
+    color: white;
+    max-width: 120px;
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease 0.4s;
+    border-radius: 5px;
+}
+.delete:hover{
+    transition: ease 0.4s;
+    background: rgb(236, 72, 8);
+    box-shadow: 0px 0px 5px rgb(236, 72, 8);
+}
 .admin-content form input{
     border: unset;
     padding: 10px 10px;
@@ -246,4 +285,71 @@ h2{
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+}
+.item__options p{
+    font-size: 10px;
+    color: white;
+}
+.galleryUpdateBlock{
+    background: rgb(11, 11, 16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    max-width: 1200px;
+    min-height: 70vh;
+    top: 50%; /* Выравнивание от верха к центру экрана */
+    left: 50%; /* Выравнивание от левого края к центру экрана */
+    transform: translate(-50%, -50%); /* Сдвигаем блок обратно на половину его ширины и высоты */
+    margin: auto;
+    width: 100%;
+    padding: 30px;
+}
+.galleryUpdateBlock__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+}
+.galleryUpdateBlock__form input{
+    max-width: 120px;
+    padding: 20px 10px;
+    border: unset;
+}
+.galleryUpdateBlock__form input[type='file']{
+    display: none;
+}
+.galleryUpdateBlock__form label{
+    font-size: 24px;
+    color: white;
+}
+.galleryUpdateBlock__form label[for="gallery-input-img"]{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    cursor: pointer;
+    transition: ease 0.4s;
+    
+}
+.galleryUpdateBlock__form label[for="gallery-input-img"]:hover{
+    transition: ease 0.4s;
+    padding: 10px;
+    background: rgba(30, 179, 202, 0.098);
+}
+.galleryUpdateBlock__form label img{
+    width: 120px;
+    height: 120px;
+}
+.upload-text{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.close-con{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    width: 100%;
 }

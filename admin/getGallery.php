@@ -10,7 +10,9 @@ foreach($res as $item)
     $response[] = [
         "id"=> $item["id"],
         "name"=> $item["name"],
-        "img"=> $item["img"]
+        "img"=> $item["img"],
+        "created_at"=> $item["created_at"],
+        "updated_at"=> $item["updated_at"]
     ];
 }
 echo json_encode($response);
